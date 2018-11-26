@@ -25,7 +25,17 @@ public class RobotMap {
 	// number and the module. For example you with a rangefinder:
 	// public static int rangefinderPort = 1;
 	// public static int rangefinderModule = 1;
+
+	public static int rollerID = 4;
+	WPI_TalonSRX roller = new WPI_TalonSRX(rollerID);
+
+	public static int[] drivebaseIDs = new int[] { 0, 1, 2, 3 };
+	public static WPI_TalonSRX[] drivebases = new WPI_TalonSRX[] {
+			new WPI_TalonSRX(drivebaseIDs[0]),
+			new WPI_TalonSRX(drivebaseIDs[1]),
+			new WPI_TalonSRX(drivebaseIDs[2]),
+			new WPI_TalonSRX(drivebaseIDs[3])
+	};
 	
 	
-	WPI_TalonSRX test = new WPI_TalonSRX(1);
 }
