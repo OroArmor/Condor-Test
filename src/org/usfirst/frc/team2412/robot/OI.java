@@ -7,6 +7,11 @@
 
 package org.usfirst.frc.team2412.robot;
 
+import org.usfirst.frc.team2412.robot.commands.*;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -39,4 +44,27 @@ public class OI {
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
+	
+	public Joystick stick = new Joystick(0);
+	public Joystick codriver = new Joystick(1);
+	
+	public JoystickButton upButton = new JoystickButton(codriver,1);
+	public JoystickButton downButton = new JoystickButton(codriver,2);
+	
+	public JoystickButton inButton = new JoystickButton(codriver,3);
+	public JoystickButton outButton = new JoystickButton(codriver,4);
+	
+	public JoystickButton highButton = new JoystickButton(codriver,5);
+	public JoystickButton lowButton = new JoystickButton(codriver,6);
+	
+	
+	public void IO() {
+		upButton.whenPressed(new IntakeUpCommand());
+		downButton.whenPressed(new IntakeDownCommade());
+		inButton.whileHeld(new IntakeInCommand());
+		outButton.whileHeld(new IntakeOutCommand());
+		highButton.whenPressed(new LaunchHighCommand());
+		lowButton.whenPressed(new LaunchLowCommand());
+	}
+	
 }
