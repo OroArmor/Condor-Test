@@ -60,7 +60,7 @@ public class OI {
 	
 	public void IO() {
 		upButton.whenPressed(new IntakeUpCommand());
-		downButton.whenPressed(new IntakeDownCommade());
+		downButton.whenPressed(new IntakeDownCommand());
 		inButton.whileHeld(new IntakeInCommand());
 		outButton.whileHeld(new IntakeOutCommand());
 		highButton.whenPressed(new LaunchHighCommand());
